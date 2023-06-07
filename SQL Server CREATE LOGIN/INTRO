@@ -1,0 +1,6 @@
+Introduction to the SQL Server CREATE LOGIN statement
+Before creating a user that accesses the databases in an SQL Server, you need to follow these steps:
+
+First, create a login for SQL Server.
+Second, create a user and map the user with the login.
+To create a login, you use the CREATE LOGIN statement. The following shows the basic syntax of the CREATE LOGIN statement:
