@@ -1,0 +1,25 @@
+1. this will create a login for SQL SERVER
+The CHECK_EXPIRATION option determines whether the password expiration policy should be enforced on this login. The CHECK_EXPIRATION can be ON or OFF. The default value is OFF.
+
+The following shows the CREATE LOGIN statement with the CHECK_EXPIRATION option:
+
+CREATE LOGIN login_name
+WITH PASSWORD = password, 
+CHECK_EXPIRATION = {ON | OFF};
+Code language: SQL (Structured Query Language) (sql)
+Note that the CHECK_EXPIRATION option is applied to SQL Server logins only.
+
+The MUST_CHANGE option
+To prompt the users for a new password the first time they log in, you use the MUST_CHANGE option. When you use the MUST_CHANGE option, the CHECK_POLICY and CHECK_EXPIRATION must be ON. Otherwise, the statement will fail.
+
+CREATE LOGIN alice
+WITH PASSWORD = 'UcxSj12.' MUST_CHANGE,
+     CHECK_POLICY=ON, 
+     CHECK_EXPRIATION=ON;
+     
+2. Creating a login from a Windows domain account
+To create a login from a Windows domain account, you use the following statement:
+
+CREATE LOGIN sqlservertutorial\peter
+FROM WINDOWS;
+     
